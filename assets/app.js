@@ -13,8 +13,6 @@ import './styles/global.scss';
 import './bootstrap';
 
 
-console.log('app.js compiled active')
-
-
+console.log('app.js compiled active');
 
 

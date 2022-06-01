@@ -2,9 +2,10 @@ console.log('recettes.js');
 
 import Vue from 'vue'
 
-import Components from './components/components';
+import RecettesComponent from './components/recettes'
 
-// Recettes Page
-new Vue({ el: '#recettes' })
-
+new Vue({
+    components: { RecettesComponent },
+    template: "<RecettesComponent />"
+}).$mount("#recettes");
 
