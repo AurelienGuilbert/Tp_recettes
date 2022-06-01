@@ -3,14 +3,14 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-
+<div id="create"></div>
 
 
 
 
 {% block javascripts %}
 {{ parent()}}
-
+{{ encore_entry_script_tags('create') }}
            
 {% endblock %}
 

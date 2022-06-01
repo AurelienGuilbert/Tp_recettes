@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         ]);
     }
     /**
-     * @Route("/home/recettes/create", name="create")
+     * @Route("/recettes/create", name="create")
      */
     public function create(): Response
     {
