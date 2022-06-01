@@ -38,15 +38,6 @@ class HomeController extends AbstractController
             
         ]);
     }
-     /**
-     * @Route("/students", name="students")
-     */
-    public function students(): Response
-    {
- 
-        return $this->render('home/students.html.twig', [
-            
-        ]);
-    }
+    
     
 }

@@ -1,11 +1,10 @@
 <template>
     <div class="container">
-        <h1>Page recettes</h1>
-        <!-- <button v-on:click="loadRecipies">Charger les recettes</button> -->
-        <!-- <ul id="recettesList">
-          <li v-for="recette in recettesList" v-bind:key="recette.id" >{{ recette }}</li>
-        </ul> -->
-        <div v-for="recette in recettesList" v-bind:key="recette.id" class="item p-3 mb-2">
+        <h1 class="mt-3 mb-3">Page recettes</h1>
+        <!-- <button v-on:click="filterRecipies">Charger les recettes</button> -->
+        <input type="text" class='mb-3' v-model="searchValue">
+        
+        <div v-for="recette in searchResult" v-bind:key="recette.id" class="item p-3 mb-2">
             <div class="d-flex justify-content-between">
                 <h5 class="col-4">{{recette.name}}</h5>
                 <div class="col-4">Difficulté : {{recette.difficulty}}</div>
@@ -19,30 +18,41 @@
     </div>
 </template>
 
-
 <script>
 import axios from "axios";
-
 export default {
   name: "RecettesComponent",
   data: function () {
     return {
-      recettesList: ['Aucun'],
+      recipes: [],
+      searchValue: ''
     }
   },
-  
   methods: {
-      loadRecipies(event) {
+    loadRecipes(event) {
         axios.get("/get-recipies").then(response => {
           
           console.log(response.data);
-          this.recettesList = response.data;
+          this.recipes = response.data;
         });
+      }, 
+  }, 
+  computed: {
+  searchResult() {
+  let tempRecipes = this.recipes
+  
+  if (this.searchValue != '' && this.searchValue) {
+        tempRecipes = tempRecipes.filter((item) => {
+          return item.name
+            .toUpperCase()
+            .includes(this.searchValue.toUpperCase())
+        })
       }
-  },
+    return tempRecipes
+  }
+},
   beforeMount() {
-        this.loadRecipies()
+        this.loadRecipes()
   } 
 };
-
 </script>
