@@ -1,0 +1,10 @@
+console.log('products.js');
+
+import Vue from 'vue'
+
+new Vue({
+    el:'#app',
+    data: {
+        message: 'hello vue'
+    }
+})
