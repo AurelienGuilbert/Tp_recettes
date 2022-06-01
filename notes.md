@@ -15,11 +15,12 @@ Etapes Developpement
     Integration webpack Encore
     Integration Vue.JS
     Initialisation GIThub
+    Configuration SQLlite
 
 Recettes DB
     nom
     temps
     difficulte
     Ingrédients
-    
+
 

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+<div id="home">
+	<div class="text-center">
+  	<page-title name="Bienvenue sur votre site de recettes !" class="mt-5"></page-title>
+	<page-button name="recettes" link={{path('recettes')}} custom="btn btn-primary"></page-button>
+	<page-button name="Deposer une recette" custom="btn btn-secondary"></page-button>
+	
+	</div>
+</div>
+
+
+
+{% block javascripts %}
+{{ parent()}}
+{{ encore_entry_script_tags('home') }}
+           
+{% endblock %}
+
+{% endblock %}

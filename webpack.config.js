@@ -21,7 +21,8 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addEntry('products', './assets/products.js')
+    .addEntry('home', './assets/home.js')
+    .addEntry('recettes', './assets/recettes.js')
    
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
@@ -59,6 +60,9 @@ Encore
     // Enable Vue loader
     .enableVueLoader()
 
+    // Enable Sass
+    .enableSassLoader()
+    
     // enables Sass/SCSS support
     //.enableSassLoader()
 

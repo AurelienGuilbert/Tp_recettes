@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div id="recettes">
+	<div class="text-center">
+  	<page-title name="Les Recettes" class="mt-5"></page-title>
+	
+	</div>
+</div>
+
+
+{% block javascripts %}
+{{ parent()}}
+{{ encore_entry_script_tags('recettes') }}
+           
+{% endblock %}
+
+{% endblock %}

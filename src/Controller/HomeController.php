@@ -9,14 +9,32 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="app_home")
+     * @Route("/home", name="home")
      */
     public function index(): Response
     {
+        return $this->render('home/home.html.twig', [             
+        ]);
+    }
+    /**
+     * @Route("/home/recettes", name="recettes")
+     */
+    public function recettes(): Response
+    {
 
-        $test = 'test from home controller';
-        return $this->render('home/index.html.twig', [
-            'test' => $test,
+        
+        return $this->render('home/recettes.html.twig', [
+            
+        ]);
+    }
+    /**
+     * @Route("/home/recettes/create", name="create")
+     */
+    public function create(): Response
+    {
+ 
+        return $this->render('home/create.html.twig', [
+            
         ]);
     }
 }

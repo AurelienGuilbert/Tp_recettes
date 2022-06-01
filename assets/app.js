@@ -7,16 +7,14 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+import './styles/global.scss';
 
 // start the Stimulus application
 import './bootstrap';
 
 
-
 console.log('app.js compiled active')
 
-console.log('test');
-console.log('test');
 
 
 
