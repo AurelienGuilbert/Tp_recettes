@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     loadRecipes(event) {
-        axios.get("/get-recipies").then(response => {
+        axios.get("/get-recipes").then(response => {
           
           console.log(response.data);
           this.recipes = response.data;
