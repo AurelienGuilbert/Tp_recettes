@@ -6,13 +6,24 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
-import './styles/global.scss';
+import '../styles/app.css';
+import '../styles/global.scss';
 
 // start the Stimulus application
-import './bootstrap';
-
+import '../bootstrap';
 
 console.log('app.js compiled active');
 
+// import 
+import Vue from 'vue';
+import Routes from './routes.js';
+import App from './views/App';
 
+// render vue.js in twig template
+const app = new Vue({
+  el: '#app',
+  router: Routes,
+  render: h => h(App),
+});
+
+export default app;

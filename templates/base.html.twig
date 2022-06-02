@@ -2,35 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-           
-        {% endblock %}
+        <title>{% block title %}Home{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
     </head>
     <body>
-    <div class="container-fluid bg-dark">
-        <div class="container navbar d-flex justify-content-start bg-dark">
-            <div class="me-3">
-                <a href="{{path('home')}}">Accueil</a>
-            </div>
-            <div class="me-3">
-                <a href="{{path('recettes')}}">Recettes</a>
-            </div>
-            <div class="me-3">
-                <a href="{{path('create')}}">Déposer une recette</a>
-            </div>
-        
-        
-        </div>
-    </div>
     <div class="container">
-        {% block body %}{% endblock %}
+    {% block content %}{% endblock %}
     </div>
         
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

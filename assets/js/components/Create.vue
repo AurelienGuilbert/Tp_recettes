@@ -1,13 +1,19 @@
 <template>
     <div>
-      <h2> Déposer une recette </h2>
+      <div class="d-flex justify-content-between">
+        <h1 class="mt-3 mb-3">Déposer une recette</h1>
+        <div class="d-flex justify-content-center align-items-center">
+          <router-link to="/">revenir à l'accueil </router-link>
+        </div>
+        
+      </div>
       <form v-on:submit.prevent="submitForm">
           <div class="form-group mb-2">
               <label for="name">Titre de la recette</label>
               <input type="text" class="form-control" id="name" placeholder="Titre de la recette" v-model="form.name">
           </div>
           <div class="form-group mb-2">
-              <label for="name">Durée</label>
+              <label for="name">Durée (min)</label>
               <input type="number" class="form-control" min="0" step="5" v-model="form.duration"/>
           </div>
           <div class="form-group mb-2">

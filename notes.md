@@ -17,6 +17,8 @@ Etapes Developpement
     Initialisation GIThub
     Configuration SQLlite
 
+    routes VUE ?
+
 Recettes DB
     nom
     temps

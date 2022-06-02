@@ -35,6 +35,24 @@ class RequestController extends AbstractController
         return new JsonResponse($response);
     }
      /**
+     * @Route("/get-recipe/{id}", name="getRecipeId")
+     */
+    public function modifyRecipe(RecettesRepository $recettesRepository,$id = null) 
+    {
+        if (!empty($id)) {
+            $recette = $recettesRepository->find($id);
+            $response = array(
+                'id' => $recette->getId(),
+                'name' => $recette->getName(),
+                'duration' => $recette->getDuration(),
+                'difficulty' => $recette->getDifficulty(),
+                'ingredients' => $recette->getIngredients(),
+            );
+            // dd($recipe);
+            return new JsonResponse($response);
+        }  
+    }
+     /**
      * @Route("/post-recipes", name="postRecipes")
      */
     public function postRecipes(Request $request,ManagerRegistry $doctrine, RecettesRepository $recettesRepository) 
@@ -62,4 +80,5 @@ class RequestController extends AbstractController
 
         return $this->json($data2);
     }
+    
 }
