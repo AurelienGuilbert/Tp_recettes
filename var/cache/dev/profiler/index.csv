@@ -3129,3 +3129,14 @@ e11d49,127.0.0.1,GET,http://localhost:8000/,1654360478,,200
 e5ac77,127.0.0.1,GET,http://localhost:8000/get-recipe/59,1654360499,,200
 80079c,127.0.0.1,GET,http://localhost:8000/get-recipe/59,1654360508,,200
 df1e88,127.0.0.1,GET,http://localhost:8000/get-recipes,1654360511,,200
+6a1806,127.0.0.1,GET,http://localhost:8000/recettes,1654360836,,200
+41d273,127.0.0.1,GET,http://localhost:8000/get-recipes,1654360836,,200
+264213,127.0.0.1,GET,http://localhost:8000/,1654361623,,200
+858356,127.0.0.1,GET,http://localhost:8000/,1654362136,,200
+17c0f0,127.0.0.1,GET,http://localhost:8000/get-recipes,1654362139,,200
+29d594,127.0.0.1,GET,http://localhost:8000/get-recipe/59,1654362143,,200
+3605a3,127.0.0.1,GET,http://localhost:8000/get-recipe/59,1654362147,,200
+ceba79,127.0.0.1,GET,http://localhost:8000/get-recipes,1654362155,,200
+69f22a,127.0.0.1,GET,http://localhost:8000/get-recipes,1654362169,,200
+2a4ffe,127.0.0.1,GET,http://localhost:8000/recettes,1654362437,,200
+f7aa04,127.0.0.1,GET,http://localhost:8000/get-recipes,1654362438,,200
