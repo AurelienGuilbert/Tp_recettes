@@ -16,8 +16,7 @@ Etapes Developpement
     Integration Vue.JS
     Initialisation GIThub
     Configuration SQLlite
-
-    routes VUE ?
+    Configuration du router Vue.js
 
 Recettes DB
     nom

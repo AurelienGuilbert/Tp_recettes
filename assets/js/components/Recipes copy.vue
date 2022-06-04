@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-
+      
       <!-- Title  -->
       <div class="d-flex justify-content-between">
         <h1 class="mt-3 mb-3">Page recettes</h1>
@@ -13,22 +13,22 @@
         <input type="text" class='mb-3' placeholder="Chercher une recette..." v-model="searchValue">
 
       <!-- Display Recipes  -->
-      <div class="d-md-flex flex-wrap">
-        <div v-for="result in searchResult" v-bind:key="result.id" class="item-container col-12 col-md-4  ">
-          <div class="p-md-3">
-            <div class="item-subcontainer">
-              <img class="card-img-top" :src="image" alt="category_img">
-              <div class="card-body">
-              <h5 class="card-title">{{result.name}}</h5>
-              <p class="card-text">Difficulté: {{result.difficulty}}</p>
-              <p class="card-text">Durée: {{result.duration}}</p>
-              <router-link :to="{ name: 'recette', params: { id: result.id }}"><button class="btn btn-primary">Voir la recette</button></router-link>
+        <div v-for="result in searchResult" v-bind:key="result.id" class="item d-flex p-3 mb-2">
+            <div class="img d-flex justify-content-center pe-3 col-2">
+              <img :src="image" alt="category_image">
             </div>
-          </div>
+            <div class="d-flex justify-content-between col-10">
+              <div class="d-flex flex-column justify-content-between "> 
+                    <h5 class="">{{result.name}}</h5>
+                    <div>Ingrédients : {{result.ingredients}}</div>
+                          <div class="">Difficulté : {{result.difficulty}}</div>
+                <div class="">Durée : {{result.duration}}</div>
+              </div> 
+              <div class="d-flex flex-column justify-content-around  p-3">
+                <router-link :to="{ name: 'recette', params: { id: result.id }}"><button class="btn btn-primary">Voir la recette</button></router-link>
+              </div> 
+            </div>
         </div>
-             
-        </div>
-      </div>
     </div>
 </template>
 
