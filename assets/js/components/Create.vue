@@ -44,10 +44,10 @@
       </form>
        <div class="message mt-3" >
         <div v-if="response" class="alert alert-success" role="alert">
-            Votre recette à bien été modifiée
+            Votre recette à bien été ajoutée
         </div>
         <div v-if="err" class="alert alert-danger" role="alert">
-            Un problème est survenu lors de la modification de votre recette
+            Un problème est survenu lors de l'ajout de votre recette
         </div>
       </div>
     </div>
@@ -72,16 +72,15 @@ export default {
     methods:{
         submitForm(){
             axios.post('/post-recipes', this.form)
-                 .then((res) => {
-                     if(res.status == 200){
-                       this.response = true;
-                     }
-                 })
-                 .catch((error) => {
-                     this.err = true;
-                 });
+                .then((res) => {
+                    if(res.status == 200){
+                    this.response = true;
+                    }
+                })
+                .catch((error) => {
+                    this.err = true;
+                });
         }
     }
 }
-
 </script>
