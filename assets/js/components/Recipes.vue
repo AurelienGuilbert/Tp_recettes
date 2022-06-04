@@ -47,8 +47,12 @@ export default {
   },
   methods: {
     loadRecipes(event) {
-        axios.get("/get-recipes").then(response => {
+        axios.get("/get-recipes")
+        .then(response => {
           this.recipes = response.data;
+        })
+        .catch((error) => {
+          console.log(error);          
         });
       }, 
   }, 
@@ -66,8 +70,9 @@ export default {
     return tempRecipes
   }
 },
-  beforeMount() {
-        this.loadRecipes()
-  } 
+mounted: function(){
+this.loadRecipes()
+}
+  
 };
 </script>

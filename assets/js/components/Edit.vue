@@ -19,17 +19,17 @@
               <label for="formControlRange">Difficulté</label><br />
               <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="difficulty" id="difficulty-easy" value="facile"
-                      v-model="form.difficulty" >
+                      v-model="form.difficulty" :checked="form.difficulty == 'facile'">
                   <label class="form-check-label" for="difficulty">facile</label>
               </div>
               <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="difficulty" id="difficulty-medium" value="medium"
-                      v-model="form.difficulty">
+                      v-model="form.difficulty" :checked="form.difficulty == 'medium'">
                   <label class="form-check-label" for="difficulty">medium</label>
               </div>
               <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="difficulty" id="difficulty-hard" value="difficile"
-                      v-model="form.difficulty">
+                      v-model="form.difficulty" :checked="form.difficulty == 'difficile'">
                   <label class="form-check-label" for="difficulty">difficile</label>
               </div>
           </div>
@@ -84,7 +84,8 @@ export default {
                  });
         },
         loadRecipe(event) {
-        axios.get('/get-recipe/'+ this.url_id).then(response => {
+        axios.get('/get-recipe/'+ this.url_id)
+        .then(response => {
           this.recipe = response.data;
 
           // prefill form with data from server
@@ -92,12 +93,19 @@ export default {
           this.form.duration = response.data.duration
           this.form.difficulty = response.data.difficulty
           this.form.ingredients = response.data.ingredients
+        })
+        .catch((error) => {
+          console.log(error);          
         });
       }, 
     },
-    beforeMount() {
-    this.url_id = this.$route.params.id
+    mounted: function(){
+        this.url_id = this.$route.params.id
     this.loadRecipe()
-  },
+
+    }
+   
+    
+  
 }
 </script>

@@ -13,7 +13,7 @@
                 <div>Durée : {{recipe.duration}}</div>
                 <div>Difficulté : {{recipe.difficulty}}</div>
                 <div>Ingrédients : {{recipe.ingredients}}</div>
-                <router-link :to="{ name: 'edit', params: { id: recipe.id }}" class="mt-3"><button class="btn btn-danger">Modifier la recette</button></router-link>
+                <router-link v-if="id" :to="{ name: 'edit', params: { id: recipe.id }}" class="mt-3"><button class="btn btn-danger">Modifier la recette</button></router-link>
             </div>  
         </div>
     </div>
@@ -31,18 +31,25 @@ export default {
       recipe: '',
       url_id: null,
       image: categoryImage,
+      id: null
     }
   },
   methods: {
     loadRecipe(event) {
-        axios.get('/get-recipe/'+ this.url_id).then(response => {
+        axios.get('/get-recipe/'+ this.url_id)
+        .then(response => {
           this.recipe = response.data;
+          this.id=this.url_id
+        })
+        .catch((error) => {
+          console.log(error);          
         });
       }, 
   }, 
-  beforeMount() {
+  mounted: function(){
     this.url_id = this.$route.params.id
     this.loadRecipe()
-  } 
+
+    }
 };
 </script>
