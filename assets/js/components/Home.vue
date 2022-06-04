@@ -1,8 +1,12 @@
 <template>
     <div class='row'>
-        <h1>Bienvenue sur votre site de recettes</h1>
-        <router-link to="/recettes">Voir les recettes</router-link>
-        <router-link to="/create">Déposer une recette</router-link>
+      <div class="d-flex justify-content-center mt-5 mb-5">
+         <h1>Bienvenue sur votre site de recettes</h1>
+      </div>
+      <div class="d-flex justify-content-center">
+        <router-link to="/recettes"><button class="btn btn-primary me-2">Voir les recettes</button></router-link>
+        <router-link to="/create"><button class="btn btn-secondary">Déposer une recette</button></router-link>
+      </div>
     </div>
 </template>
 

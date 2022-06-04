@@ -5,7 +5,6 @@
         <div class="d-flex justify-content-center align-items-center">
           <router-link to="/">revenir à l'accueil </router-link>
         </div>
-        
       </div>
       <form v-on:submit.prevent="submitForm">
           <div class="form-group mb-2">
@@ -43,9 +42,13 @@
               <button class="btn btn-primary">Déposer</button>
           </div>
       </form>
-      <div class="message" >
-        <p v-if="response">Votre recette à bien été ajoutée</p>
-        <p v-if="err">Un problème est survenu lors de l'ajout de votre recette</p>
+       <div class="message mt-3" >
+        <div v-if="response" class="alert alert-success" role="alert">
+            Votre recette à bien été modifiée
+        </div>
+        <div v-if="err" class="alert alert-danger" role="alert">
+            Un problème est survenu lors de la modification de votre recette
+        </div>
       </div>
     </div>
 </template>

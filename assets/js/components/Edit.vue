@@ -11,7 +11,6 @@
               <label for="name">Titre de la recette</label>
               <input type="text" class="form-control" id="name" :placeholder="recipe.name" v-model="form.name">
           </div>
-         
           <div class="form-group mb-2">
               <label for="name">Durée (min)</label>
               <input type="number" class="form-control" min="0" step="5" v-model="form.duration"/>
@@ -43,9 +42,13 @@
               <button class="btn btn-primary">Modifier</button>
           </div>
       </form>
-      <div class="message" >
-        <p v-if="response">Votre recette à bien été modifiée</p>
-        <p v-if="err">Un problème est survenu lors de la modification de votre recette</p>
+      <div class="message mt-3" >
+        <div v-if="response" class="alert alert-success" role="alert">
+            Votre recette à bien été modifiée
+        </div>
+        <div v-if="err" class="alert alert-danger" role="alert">
+            Un problème est survenu lors de la modification de votre recette
+        </div>
       </div>
     </div>
 </template>
@@ -65,8 +68,7 @@ export default {
             response : false,
             err : false,
             recipe: '',
-            url_id: null,
-            
+            url_id: null, 
         }
     },
     methods:{
@@ -93,12 +95,9 @@ export default {
         });
       }, 
     },
-    
     beforeMount() {
     this.url_id = this.$route.params.id
     this.loadRecipe()
   },
- 
 }
-
 </script>

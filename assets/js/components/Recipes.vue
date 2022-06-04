@@ -7,27 +7,34 @@
         </div>
       </div>
         <input type="text" class='mb-3' placeholder="Chercher une recette..." v-model="searchValue">
-        <div v-for="result in searchResult" v-bind:key="result.id" class="item p-3 mb-2">
-            <div class="d-flex justify-content-between">
-                <h5 class="col-4">{{result.name}}</h5>
-                <div class="col-4">Difficulté : {{result.difficulty}}</div>
-                
+        <div v-for="result in searchResult" v-bind:key="result.id" class="item d-flex p-3 mb-2">
+            <div class="img d-flex justify-content-center pe-3 col-2">
+              <img :src="image" alt="category_image">
             </div>
-            <div class="d-flex justify-content-between">
-                <div>{{result.ingredients}}</div>
-                <div class="col-4">Durée : {{result.duration}}</div>
+            <div class="d-flex justify-content-between col-10">
+              <div class="d-flex flex-column justify-content-between "> 
+                    <h5 class="">{{result.name}}</h5>
+                    <div>Ingrédients : {{result.ingredients}}</div>
+                          <div class="">Difficulté : {{result.difficulty}}</div>
+                <div class="">Durée : {{result.duration}}</div>
+              </div> 
+              <div class="d-flex flex-column justify-content-around  p-3">
+                <router-link :to="{ name: 'recette', params: { id: result.id }}"><button class="btn btn-primary">Voir la recette</button></router-link>
+              </div> 
             </div>
-            <router-link :to="{ name: 'recette', params: { id: result.id }}">voir la recette</router-link>
         </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import categoryImage from "../images/img.jpg"
+
 export default {
   name: "RecettesComponent",
   data: function () {
     return {
+      image: categoryImage,
       recipes: [],
       searchValue: ''
     }
@@ -35,8 +42,6 @@ export default {
   methods: {
     loadRecipes(event) {
         axios.get("/get-recipes").then(response => {
-          
-          console.log(response.data);
           this.recipes = response.data;
         });
       }, 
