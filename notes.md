@@ -14,9 +14,10 @@ Etapes Developpement
     Création projet symfony
     Integration webpack Encore
     Integration Vue.JS
-    Initialisation GIThub
     Configuration SQLlite
     Configuration du router Vue.js
+    Installation bootstrap
+    Initialisation GIThub
 
 Recettes DB
     nom
