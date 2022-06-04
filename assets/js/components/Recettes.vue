@@ -17,10 +17,8 @@
                 <div>{{recette.ingredients}}</div>
                 <div class="col-4">Durée : {{recette.duration}}</div>
             </div>
-            <router-link to="/edit">voir la recette</router-link>
+            <router-link :to="{ name: 'recette', params: { id: recette.id }}">voir la recette</router-link>
         </div>
-        
-    
     </div>
 </template>
 
