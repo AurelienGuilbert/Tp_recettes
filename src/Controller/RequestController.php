@@ -80,5 +80,33 @@ class RequestController extends AbstractController
 
         return $this->json($data2);
     }
+     /**
+     * @Route("/edit-recipe/{id}", name="editRecipe")
+     */
+    public function editRecipe(Request $request,ManagerRegistry $doctrine, RecettesRepository $recettesRepository, $id = null) 
+    {
+        // handle request JSON
+        $data = $request->getContent();
+
+        // decode json to php variable
+        $data2 = json_decode($data, true);
+        
+        // decompose each variable
+        $name = $data2['name'];
+        $duration = $data2['duration'];
+        $difficulty = $data2['difficulty'];
+        $ingredients = $data2['ingredients'];
+        
+        // implement DB
+        $recette = $recettesRepository->find($id);
+        $recette->setName($name);
+        $recette->setDuration($duration);
+        $recette->setDifficulty($difficulty);
+        $recette->setIngredients($ingredients);
+        $doctrine->getManager()->persist($recette);
+        $doctrine->getManager()->flush();
+
+        return $this->json($data2);
+    }
     
 }

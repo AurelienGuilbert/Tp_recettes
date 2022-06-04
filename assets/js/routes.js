@@ -3,8 +3,8 @@ import VueRouter from 'vue-router';
 
 // components
 import Home from './components/Home';
-import Recettes from './components/Recettes';
-import Recette from './components/Recette';
+import Recipes from './components/Recipes';
+import Recipe from './components/Recipe';
 import Create from './components/Create';
 import Edit from './components/Edit';
 
@@ -15,9 +15,9 @@ const router = new VueRouter({
   mode: 'history',
   routes:[
     {path:'/', name:'home', component:Home},
-    {path:'/recettes', name:'recettes', component:Recettes},
+    {path:'/recettes', name:'recettes', component:Recipes},
     {path:'/create', name:'create', component:Create},
-    {path:'/recette/:id', name:'recette', component:Recette},
+    {path:'/recette/:id', name:'recette', component:Recipe},
     {path:'/edit/:id', name:'edit', component:Edit},
   ]
 });
