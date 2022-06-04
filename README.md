@@ -14,6 +14,8 @@ npm install vue-router@3.5.4
 npm install vue-loader vue-template-compiler
 npm install axios
 
+composer require symfony/webpack-encore-bundle
+npm install @symfony/webpack-encore --save-dev
 
 ## launch 
 npm run dev-server
