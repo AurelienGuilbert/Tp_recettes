@@ -1,7 +1,7 @@
 <template>
     <div class='row'>
       <div class="text-center mt-5 mb-5">
-         <h1>Bienvenue sur votre site de recettes</h1>
+         <h1>Bienvenue sur votre site de recettes.</h1>
       </div>
       <div class="text-center">
         <router-link to="/recettes"><button class="btn btn-primary me-2">Voir les recettes</button></router-link>
